@@ -1,6 +1,6 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const EmissionLog = require('../models/EmissionLog');
-const User = require('../models/User');
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const EmissionLog = require("../models/EmissionLog");
+const User = require("../models/User");
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -8,10 +8,11 @@ const extractEmission = async (req, res) => {
   try {
     const { message } = req.body;
     if (!message) {
-      return res.status(400).json({ error: 'Message is required' });
+      return res.status(400).json({ error: "Message is required" });
     }
+    console.log("API KEY EXISTS:", !!process.env.GEMINI_API_KEY);
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const prompt = `You are an emission data 
      extractor for a carbon tracking app.
      Extract emission data from the user 
@@ -47,17 +48,24 @@ const extractEmission = async (req, res) => {
 
     const result = await model.generateContent(prompt);
     const text = result.response.text();
-    const clean = text.replace(/```json|```/g, '').trim();
+    const clean = text.replace(/```json|```/g, "").trim();
+
+    console.log("Gemini Response:");
+    console.log(clean);
+
     const extracted = JSON.parse(clean);
 
     if (extracted.clarification_needed) {
-      return res.json({ type: 'clarification', message: extracted.clarification_needed });
+      return res.json({
+        type: "clarification",
+        message: extracted.clarification_needed,
+      });
     } else {
-      return res.json({ type: 'extracted', data: extracted });
+      return res.json({ type: "extracted", data: extracted });
     }
   } catch (error) {
-    console.error('AI Extraction Error:', error);
-    return res.status(500).json({ error: 'AI parsing failed' });
+    console.error("AI Extraction Error:", error);
+    return res.status(500).json({ error: "AI parsing failed" });
   }
 };
 
@@ -70,7 +78,7 @@ const getRecommendations = async (req, res) => {
 
     // Build summary string of emissions by category
     const categoryTotals = {};
-    logs.forEach(log => {
+    logs.forEach((log) => {
       if (!categoryTotals[log.category]) {
         categoryTotals[log.category] = 0;
       }
@@ -79,9 +87,9 @@ const getRecommendations = async (req, res) => {
 
     const emission_summary_string = Object.entries(categoryTotals)
       .map(([cat, total]) => `${cat}: ${total} kg CO2e`)
-      .join(', ');
+      .join(", ");
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const prompt = `You are a carbon reduction 
      expert. Based on company emission data, 
      generate exactly 3 specific actionable 
@@ -107,13 +115,13 @@ const getRecommendations = async (req, res) => {
 
     const result = await model.generateContent(prompt);
     const text = result.response.text();
-    const clean = text.replace(/```json|```/g, '').trim();
+    const clean = text.replace(/```json|```/g, "").trim();
     const recommendations = JSON.parse(clean);
 
     return res.json({ recommendations });
   } catch (error) {
-    console.error('AI Recommendations Error:', error);
-    return res.status(500).json({ error: 'AI parsing failed' });
+    console.error("AI Recommendations Error:", error);
+    return res.status(500).json({ error: "AI parsing failed" });
   }
 };
 
