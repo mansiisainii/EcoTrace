@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors()); // Allow all origins (configure for production later)
 app.use(express.json()); // Parse incoming JSON request bodies
 
-// ─── Routes (placeholder — will be wired up in upcoming days) ─────────────────
-// app.use('/api/auth', require('./routes/auth'));
+// ─── Routes ───────────────────────────────────────────────────────────────────
+app.use('/api/auth', require('./routes/auth'));
 // app.use('/api/emissions', require('./routes/emissions'));
 // app.use('/api/ai', require('./routes/ai'));
 
