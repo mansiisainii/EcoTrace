@@ -1,4 +1,4 @@
-console.log("MY INDEX FILE IS RUNNING");
+
 
 require('dotenv').config();
 const express = require('express');
@@ -19,7 +19,7 @@ app.use(express.json()); // Parse incoming JSON request bodies
 // ─── Routes ───────────────────────────────────────────────────────────────────
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/emissions', require('./routes/emissions'));
-// app.use('/api/ai', require('./routes/ai'));
+app.use('/api/ai', require('./routes/ai'));
 
 // ─── MongoDB Connection ───────────────────────────────────────────────────────
 const connectDB = async () => {
