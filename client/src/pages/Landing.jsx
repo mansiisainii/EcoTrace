@@ -1,0 +1,164 @@
+import React from 'react';
+import { Leaf, MessageSquare, Calculator, TrendingDown, Bot, BarChart3, LineChart, Lightbulb } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../api';
+import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
+
+const Landing = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const handleDemoLogin = async () => {
+    try {
+      const { data } = await loginUser({ email: 'demo@ecotrace.com', password: 'demo123' });
+      login(data.user, data.token);
+      toast.success("Welcome to Demo Dashboard");
+      navigate('/dashboard');
+    } catch (error) {
+      toast.error("Demo login failed");
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[var(--background)] fade-in">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#030712] to-[#0a1628] px-4 py-20">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          
+          {/* Left Side */}
+          <div className="flex flex-col gap-6 text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+              <Leaf className="w-8 h-8 text-green-500" />
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-400">
+                EcoTrace
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              Track Your Company's Carbon Footprint with AI
+            </h1>
+            
+            <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto lg:mx-0">
+              Tell our AI what your business does. We calculate the CO2. You reduce it.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center lg:justify-start">
+              <Link to="/register" className="btn-primary w-full sm:w-auto text-center">
+                Get Started Free
+              </Link>
+              <button onClick={handleDemoLogin} className="btn-outline w-full sm:w-auto text-center">
+                View Live Demo
+              </button>
+            </div>
+          </div>
+
+          {/* Right Side */}
+          <div className="relative h-[400px] flex items-center justify-center hidden md:flex">
+            <div className="absolute inset-0 bg-green-500/10 blur-[80px] rounded-full"></div>
+            <div 
+              className="card bg-[var(--card)] border border-green-500/30 p-8 shadow-2xl relative z-10"
+              style={{
+                animation: 'float 3s ease-in-out infinite'
+              }}
+            >
+              <div className="flex flex-col items-center text-center gap-2">
+                <span className="text-5xl font-bold text-green-500">952 <span className="text-2xl">kg CO2e</span></span>
+                <span className="text-lg text-[var(--text-muted)] mt-2">Electricity • Scope 2</span>
+                <div className="w-full h-1 bg-[var(--border)] rounded-full mt-4 overflow-hidden">
+                  <div className="h-full bg-green-500 w-[60%]"></div>
+                </div>
+              </div>
+            </div>
+            <style>{`
+              @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+              }
+            `}</style>
+          </div>
+
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 px-4 bg-[var(--card)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">How It Works</h2>
+            <p className="text-[var(--text-muted)] max-w-2xl mx-auto">Three simple steps to understand and reduce your environmental impact.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
+                <MessageSquare className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">Describe Your Activity</h3>
+              <p className="text-[var(--text-muted)]">Type naturally: "We used 2000 kWh in our Mumbai office"</p>
+            </div>
+            
+            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
+                <Calculator className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">AI Calculates CO2</h3>
+              <p className="text-[var(--text-muted)]">Our AI extracts data and Climatiq API calculates exact emissions</p>
+            </div>
+            
+            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
+                <TrendingDown className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">Reduce & Report</h3>
+              <p className="text-[var(--text-muted)]">Get smart recommendations and track progress over time</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-24 px-4 bg-[var(--background)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">Powerful Features</h2>
+            <p className="text-[var(--text-muted)] max-w-2xl mx-auto">Everything you need to manage your carbon footprint effectively.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
+              <Bot className="w-10 h-10 text-green-500 mb-4" />
+              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">🤖 AI Chat Input</h3>
+              <p className="text-[var(--text-muted)] text-sm">No forms, just natural language</p>
+            </div>
+            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
+              <BarChart3 className="w-10 h-10 text-green-500 mb-4" />
+              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Scope 1, 2 & 3 Tracking</h3>
+              <p className="text-[var(--text-muted)] text-sm">Full GHG Protocol compliance</p>
+            </div>
+            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
+              <LineChart className="w-10 h-10 text-green-500 mb-4" />
+              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Real-time Dashboard</h3>
+              <p className="text-[var(--text-muted)] text-sm">Live charts and insights</p>
+            </div>
+            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
+              <Lightbulb className="w-10 h-10 text-green-500 mb-4" />
+              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Smart Recommendations</h3>
+              <p className="text-[var(--text-muted)] text-sm">AI-powered reduction strategies</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-[var(--border)] bg-[var(--card)] py-8 px-4 text-center text-[var(--text-muted)]">
+        <p>EcoTrace © 2024 | <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-green-500 transition-colors">GitHub</a></p>
+      </footer>
+    </div>
+  );
+};
+
+export default Landing;
