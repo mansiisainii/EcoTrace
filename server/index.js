@@ -18,7 +18,7 @@ app.use(express.json()); // Parse incoming JSON request bodies
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
 app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/emissions', require('./routes/emissions'));
+app.use('/api/emissions', require('./routes/emissions'));
 // app.use('/api/ai', require('./routes/ai'));
 
 // ─── MongoDB Connection ───────────────────────────────────────────────────────
