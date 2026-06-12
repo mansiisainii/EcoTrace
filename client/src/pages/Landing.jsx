@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Leaf, MessageSquare, Calculator, TrendingDown, Bot, BarChart3, LineChart, Lightbulb } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -12,11 +13,18 @@ const Landing = () => {
   const handleDemoLogin = async () => {
     try {
       const { data } = await loginUser({ email: 'demo@ecotrace.com', password: 'demo123' });
-      login(data.user, data.token);
-      toast.success("Welcome to Demo Dashboard");
+      
+      // Prevent frontend context variables from loading data maps as undefined keys
+      const safeUserSession = data.user 
+        ? { ...data.user, companyName: data.user.company || data.user.name } 
+        : { name: "Demo Administrator", companyName: "Acme Corporation" };
+
+      login(safeUserSession, data.token);
+      toast.success("Welcome to Demo Dashboard View");
       navigate('/dashboard');
     } catch (error) {
-      toast.error("Demo login failed");
+      console.error(error);
+      toast.error("Demo authentication pipeline connection dropped. Check MongoDB clusters.");
     }
   };
 
@@ -55,15 +63,11 @@ const Landing = () => {
             </div>
           </div>
 
-          {/* Right Side */}
-          <div className="relative h-[400px] flex items-center justify-center hidden md:flex">
+          {/* Right Side - Static Visual Component */}
+          <div className="relative h-[400px] items-center justify-center hidden md:flex">
             <div className="absolute inset-0 bg-green-500/10 blur-[80px] rounded-full"></div>
-            <div 
-              className="card bg-[var(--card)] border border-green-500/30 p-8 shadow-2xl relative z-10"
-              style={{
-                animation: 'float 3s ease-in-out infinite'
-              }}
-            >
+            {/* Removed the inline float animation style parameter entirely */}
+            <div className="card bg-[var(--card)] border border-green-500/30 p-8 shadow-2xl relative z-10 transform-none transition-none">
               <div className="flex flex-col items-center text-center gap-2">
                 <span className="text-5xl font-bold text-green-500">952 <span className="text-2xl">kg CO2e</span></span>
                 <span className="text-lg text-[var(--text-muted)] mt-2">Electricity • Scope 2</span>
@@ -72,13 +76,6 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            <style>{`
-              @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-                100% { transform: translateY(0px); }
-              }
-            `}</style>
           </div>
 
         </div>
@@ -93,7 +90,7 @@ const Landing = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+            <div className="card text-center">
               <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                 <MessageSquare className="w-8 h-8 text-green-500" />
               </div>
@@ -101,7 +98,7 @@ const Landing = () => {
               <p className="text-[var(--text-muted)]">Type naturally: "We used 2000 kWh in our Mumbai office"</p>
             </div>
             
-            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+            <div className="card text-center">
               <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                 <Calculator className="w-8 h-8 text-green-500" />
               </div>
@@ -109,7 +106,7 @@ const Landing = () => {
               <p className="text-[var(--text-muted)]">Our AI extracts data and Climatiq API calculates exact emissions</p>
             </div>
             
-            <div className="card text-center hover:-translate-y-2 transition-transform duration-300">
+            <div className="card text-center">
               <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                 <TrendingDown className="w-8 h-8 text-green-500" />
               </div>
@@ -120,42 +117,9 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 px-4 bg-[var(--background)]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">Powerful Features</h2>
-            <p className="text-[var(--text-muted)] max-w-2xl mx-auto">Everything you need to manage your carbon footprint effectively.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
-              <Bot className="w-10 h-10 text-green-500 mb-4" />
-              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">🤖 AI Chat Input</h3>
-              <p className="text-[var(--text-muted)] text-sm">No forms, just natural language</p>
-            </div>
-            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
-              <BarChart3 className="w-10 h-10 text-green-500 mb-4" />
-              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Scope 1, 2 & 3 Tracking</h3>
-              <p className="text-[var(--text-muted)] text-sm">Full GHG Protocol compliance</p>
-            </div>
-            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
-              <LineChart className="w-10 h-10 text-green-500 mb-4" />
-              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Real-time Dashboard</h3>
-              <p className="text-[var(--text-muted)] text-sm">Live charts and insights</p>
-            </div>
-            <div className="card hover:shadow-lg hover:shadow-green-500/5 transition-all">
-              <Lightbulb className="w-10 h-10 text-green-500 mb-4" />
-              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-2">Smart Recommendations</h3>
-              <p className="text-[var(--text-muted)] text-sm">AI-powered reduction strategies</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t border-[var(--border)] bg-[var(--card)] py-8 px-4 text-center text-[var(--text-muted)]">
-        <p>EcoTrace © 2024 | <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-green-500 transition-colors">GitHub</a></p>
+        <p>EcoTrace © 2026 | <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-green-500 transition-colors">GitHub</a></p>
       </footer>
     </div>
   );
