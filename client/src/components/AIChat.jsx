@@ -7,7 +7,7 @@ const AIChat = ({ onNewLog }) => {
   const [messages, setMessages] = useState([
     {
       role: 'bot',
-      text: "Hi! I'm EcoTrace AI 🌱\n\nTell me about any business activity and I'll calculate its carbon footprint.\n\nTry: \"We used 2000 kWh electricity in our Mumbai office\"\nOr: \"Shipped 500kg goods from Delhi to London by air\"\nOr: \"5 employees flew from Bangalore to Dubai in economy\""
+      text: "Hi! I'm EcoTrace AI \n\nTell me about any business activity and I'll calculate its carbon footprint.\n\nTry: \"We used 2000 kWh electricity in our Mumbai office\"\nOr: \"Shipped 500kg goods from Delhi to London by air\"\nOr: \"5 employees flew from Bangalore to Dubai in economy\""
     }
   ]);
   const [input, setInput] = useState('');

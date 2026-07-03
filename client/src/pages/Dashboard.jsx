@@ -83,7 +83,7 @@ const Dashboard = () => {
         {/* Header */}
         <div>
           <h1 className="text-3xl font-bold text-[var(--text-primary)]">
-            Welcome back, {user?.companyName || user?.company || user?.name} 👋
+            Welcome back, {user?.companyName || user?.company || user?.name} 
           </h1>
           <p className="text-[var(--text-muted)] mt-1">Here's your emission summary</p>
         </div>
