@@ -53,10 +53,10 @@ const Login = () => {
           </Link>
         </div>
 
-        <div className="card shadow-xl shadow-green-900/5">
+        <div className="p-8 sm:p-12 border border-[var(--border)] rounded-3xl bg-transparent shadow-sm transition-colors duration-300 hover:border-green-500/50">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-[var(--text-primary)]">Welcome Back</h2>
-            <p className="text-[var(--text-muted)] mt-2">Sign in to your account to continue</p>
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)]">Welcome Back</h2>
+            <p className="text-sm text-[var(--text-muted)] mt-2">Sign in to your account to continue</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -95,7 +95,7 @@ const Login = () => {
 
             <button 
               type="submit" 
-              className="btn-primary w-full mt-6"
+              className="w-full mt-8 bg-green-600 text-white font-medium rounded-xl px-5 py-3 transition-all hover:bg-green-700 shadow-sm"
               disabled={loading}
             >
               {loading ? 'Signing in...' : 'Sign In'}
@@ -107,7 +107,7 @@ const Login = () => {
               <div className="w-full border-t border-[var(--border)]"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-[var(--card)] text-[var(--text-muted)]">Or try it out</span>
+              <span className="px-2 bg-[var(--background)] text-[var(--text-muted)]">Or try it out</span>
             </div>
           </div>
 
@@ -115,7 +115,7 @@ const Login = () => {
             type="button" 
             onClick={handleDemoLogin}
             disabled={loading}
-            className="btn-outline w-full text-sm"
+            className="w-full bg-transparent border border-[var(--border)] text-green-500 font-medium rounded-xl px-5 py-3 transition-colors hover:border-green-500/50 hover:bg-green-500/5 text-sm"
           >
             Use Demo Account
           </button>

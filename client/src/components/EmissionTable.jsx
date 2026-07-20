@@ -7,10 +7,10 @@ const EmissionTable = ({ logs }) => {
 
   const getScopeColor = (scope) => {
     const s = String(scope).toLowerCase();
-    if (s.includes('1')) return 'bg-red-900/40 text-red-400 border-red-900/50';
-    if (s.includes('2')) return 'bg-yellow-900/40 text-yellow-400 border-yellow-900/50';
-    if (s.includes('3')) return 'bg-blue-900/40 text-blue-400 border-blue-900/50';
-    return 'bg-gray-900/40 text-gray-400 border-gray-900/50';
+    if (s.includes('1')) return 'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/40 dark:text-red-400 dark:border-red-900/50';
+    if (s.includes('2')) return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/40 dark:text-yellow-400 dark:border-yellow-900/50';
+    if (s.includes('3')) return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/40 dark:text-blue-400 dark:border-blue-900/50';
+    return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-900/40 dark:text-gray-400 dark:border-gray-900/50';
   };
 
   const getCategoryDot = (category) => {
@@ -29,7 +29,7 @@ const EmissionTable = ({ logs }) => {
     <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--card)]">
       <table className="w-full text-left border-collapse">
         <thead>
-          <tr className="border-b border-[var(--border)] bg-black/10">
+          <tr className="border-b border-[var(--border)] bg-gray-50 dark:bg-black/10">
             <th className="px-6 py-4 text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">Date</th>
             <th className="px-6 py-4 text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">Category</th>
             <th className="px-6 py-4 text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">Scope</th>
@@ -65,7 +65,7 @@ const EmissionTable = ({ logs }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-muted)] uppercase">
                   {log.region || '-'}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-green-500 text-right">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-data-green text-right">
                   {log.co2e?.toLocaleString(undefined, { maximumFractionDigits: 1 })}
                 </td>
               </tr>
@@ -73,9 +73,9 @@ const EmissionTable = ({ logs }) => {
           })}
         </tbody>
         <tfoot>
-          <tr className="bg-black/10 border-t border-[var(--border)]">
+          <tr className="bg-gray-50 dark:bg-black/10 border-t border-[var(--border)]">
             <td colSpan="5" className="px-6 py-4 text-right font-bold text-[var(--text-primary)]">Total</td>
-            <td className="px-6 py-4 text-right font-bold text-green-500 text-lg">
+            <td className="px-6 py-4 text-right font-bold text-data-green text-lg">
               {totalCO2e.toLocaleString(undefined, { maximumFractionDigits: 1 })}
             </td>
           </tr>

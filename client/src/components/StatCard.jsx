@@ -38,7 +38,7 @@ const StatCard = ({ title, value, unit, icon: Icon }) => {
       </div>
       <div className="mt-auto">
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-bold text-green-500">
+          <span className="text-3xl font-bold text-data-green">
             {displayValue.toLocaleString(undefined, { maximumFractionDigits: 1 })}
           </span>
           {unit && <span className="text-[var(--text-muted)] text-sm">{unit}</span>}

@@ -32,7 +32,7 @@ const Landing = () => {
     <div className="min-h-screen bg-[var(--background)] fade-in">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#030712] to-[#0a1628] px-4 py-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[160px] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           
@@ -45,15 +45,15 @@ const Landing = () => {
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
               Track Your Company's Carbon Footprint with AI
             </h1>
             
-            <p className="text-xl text-[var(--text-muted)] max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg font-normal leading-relaxed text-[var(--text-muted)] max-w-2xl mx-auto lg:mx-0 mt-2 mb-4">
               Tell our AI what your business does. We calculate the CO2. You reduce it.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Link to="/register" className="btn-primary w-full sm:w-auto text-center">
                 Get Started Free
               </Link>
@@ -65,10 +65,11 @@ const Landing = () => {
 
           {/* Right Side - Static Visual Component */}
           <div className="relative h-[400px] items-center justify-center hidden md:flex">
-            <div className="absolute inset-0 bg-green-500/10 blur-[80px] rounded-full"></div>
+            <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full"></div>
             {/* Removed the inline float animation style parameter entirely */}
             <div className="card bg-[var(--card)] border border-green-500/30 p-8 shadow-2xl relative z-10 transform-none transition-none">
               <div className="flex flex-col items-center text-center gap-2">
+                <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest mb-1 px-3 py-1 bg-[var(--background)] rounded-full border border-[var(--border)]">Sample Metric</div>
                 <span className="text-5xl font-bold text-green-500">952 <span className="text-2xl">kg CO2e</span></span>
                 <span className="text-lg text-[var(--text-muted)] mt-2">Electricity • Scope 2</span>
                 <div className="w-full h-1 bg-[var(--border)] rounded-full mt-4 overflow-hidden">

@@ -39,10 +39,10 @@ const Register = () => {
           </Link>
         </div>
 
-        <div className="card shadow-xl shadow-green-900/5">
+        <div className="p-8 sm:p-12 border border-[var(--border)] rounded-3xl bg-transparent shadow-sm transition-colors duration-300 hover:border-green-500/50">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-[var(--text-primary)]">Create an Account</h2>
-            <p className="text-[var(--text-muted)] mt-2">Start tracking your carbon footprint</p>
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)]">Create an Account</h2>
+            <p className="text-sm text-[var(--text-muted)] mt-2">Start tracking your carbon footprint</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -105,7 +105,7 @@ const Register = () => {
 
             <button 
               type="submit" 
-              className="btn-primary w-full mt-6"
+              className="w-full mt-8 bg-green-600 text-white font-medium rounded-xl px-5 py-3 transition-all hover:bg-green-700 shadow-sm"
               disabled={loading}
             >
               {loading ? 'Creating Account...' : 'Create Account'}

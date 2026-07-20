@@ -18,6 +18,9 @@ export default {
         text: {
           primary: 'var(--text-primary)',
           muted: 'var(--text-muted)',
+        },
+        data: {
+          green: 'var(--data-green)'
         }
       },
       fontFamily: {

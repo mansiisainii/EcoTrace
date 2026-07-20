@@ -9,7 +9,7 @@ const SummaryCard = ({ title, value, icon: Icon, isTextWhite }) => (
   <div className="card relative p-6 flex flex-col justify-between">
     <p className="text-sm text-[var(--text-muted)] mb-4">{title}</p>
     <Icon className="w-5 h-5 text-green-500 absolute top-6 right-6" />
-    <h3 className={`text-3xl font-bold ${isTextWhite ? 'text-[var(--text-primary)]' : 'text-green-500'}`}>
+    <h3 className={`text-3xl font-bold ${isTextWhite ? 'text-[var(--text-primary)]' : 'text-data-green'}`}>
       {value}
     </h3>
   </div>

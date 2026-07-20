@@ -9,6 +9,7 @@
     --primary-dark: #16a34a;
     --text-primary: #f9fafb;
     --text-muted: #9ca3af;
+    --data-green: #22c55e;
   }
 
   .light {
@@ -18,6 +19,7 @@
     --primary: #16a34a;
     --text-primary: #111827;
     --text-muted: #6b7280;
+    --data-green: #15803d;
   }
 
   body {
