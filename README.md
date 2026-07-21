@@ -48,11 +48,15 @@ English — and the app handles everything else.
   strategies generated from your actual emission data
 - 📁 **Reports Page** — filterable table by date range, 
   category, and scope with running CO2e total
+- 📥 **Export CSV** — download all emission logs as a CSV file directly from the Reports page
+- 🖨️ **Print / PDF** — print your emission report or save it as a PDF from the Reports page
+- 🤖 **EcoTrace Guide Chatbot** — floating help assistant powered by Groq AI with a 3-layer caching system (FAQ → MongoDB cache → Groq AI) that answers questions about how to use the app with minimal API usage
 - 🌗 **Dark/Light Theme** — persisted via localStorage
 - 📱 **Fully Responsive** — mobile-first layout, 
   hamburger nav on small screens
 - 🔐 **JWT Authentication** — secure login/register 
   with bcrypt password hashing
+- 👤 **User Settings** — edit profile (name, company name) and change password from the Settings page
 - 🛡️ **Resilient Fallback** — if Groq or Climatiq hits 
   rate limits, local calculation formulas kick in 
   automatically so the app never breaks
@@ -103,6 +107,28 @@ falls back to local category-specific formulas:
 
 ---
 
+## 🤖 EcoTrace Guide — Help Chatbot
+
+The floating help widget (bottom-right corner) is a cost-efficient 
+in-app assistant that answers questions about how to use EcoTrace.
+
+```
+User asks a question
+        ↓
+Layer 1 → FAQ keyword matching (instant, 0 API calls)
+        ↓ miss
+Layer 2 → MongoDB fuzzy cache (instant, 0 API calls)
+        ↓ miss
+Layer 3 → Groq AI (called only when truly needed)
+        ↓
+Answer saved to cache for future reuse
+```
+
+This 3-layer architecture ensures ~90% of repeat questions 
+are answered instantly without consuming any API tokens.
+
+---
+
 ## 🌐 Scope Classification
 
 | Category | Scope | Example |
@@ -125,6 +151,7 @@ falls back to local category-specific formulas:
 | POST | `/api/emissions/calculate` | ✅ | Log and calculate CO2e |
 | GET | `/api/emissions/logs` | ✅ | Fetch all emission logs |
 | GET | `/api/emissions/summary` | ✅ | Dashboard aggregated stats |
+| POST | `/api/help-chat` | ❌ | EcoTrace Guide help chatbot |
 
 All protected routes require:
 ```
@@ -217,19 +244,24 @@ EcoTrace/
 │   │   ├── api/                # Axios instance + API calls
 │   │   ├── components/         # Navbar, AIChat, StatCard,
 │   │   │                       # RecommendationCard, 
-│   │   │                       # EmissionTable, ThemeToggle
+│   │   │                       # EmissionTable, ThemeToggle,
+│   │   │                       # HelpChatWidget
 │   │   ├── context/            # AuthContext, ThemeContext
 │   │   └── pages/              # Landing, Login, Register,
-│   │                           # Dashboard, Reports
+│   │                           # Dashboard, Reports, Settings
 │   └── .env
 │
 └── server/                     # Node.js backend
     ├── controllers/            # authController,
     │                           # emissionController,
-    │                           # aiController
+    │                           # aiController,
+    │                           # helpChatController
+    ├── data/                   # helpFaq.json (35+ Q&A pairs)
     ├── middleware/             # JWT auth middleware
-    ├── models/                 # User, EmissionLog schemas
-    ├── routes/                 # auth, emissions, ai routes
+    ├── models/                 # User, EmissionLog,
+    │                           # HelpChatCache schemas
+    ├── routes/                 # auth, emissions, ai,
+    │                           # helpChat routes
     ├── seed/                   # Demo data seeder
     └── .env
 ```
@@ -245,7 +277,7 @@ EcoTrace/
 | `MONGO_URI` | MongoDB Atlas connection string |
 | `JWT_SECRET` | Secret key for JWT signing |
 | `CLIMATIQ_API_KEY` | Climatiq emission factor API key |
-| `GROQ_API_KEY` | Groq LLM API key (Llama 3.1) |
+| `GROQ_API_KEY` | Groq LLM API key (Llama 3.1) — used for both emission extraction and help chatbot |
 
 ### Client
 | Variable | Description |
