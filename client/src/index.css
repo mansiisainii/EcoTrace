@@ -13,12 +13,12 @@
   }
 
   .light {
-    --background: #f9fafb;
-    --card: #ffffff;
-    --border: #e5e7eb;
+    --background: #f5f5f4;
+    --card: #fafaf9;
+    --border: #e7e5e4;
     --primary: #16a34a;
-    --text-primary: #111827;
-    --text-muted: #6b7280;
+    --text-primary: #1c1917;
+    --text-muted: #78716c;
     --data-green: #15803d;
   }
 

@@ -20,6 +20,7 @@ app.use(express.json()); // Parse incoming JSON request bodies
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/emissions', require('./routes/emissions'));
 app.use('/api/ai', require('./routes/ai'));
+app.use('/api/help-chat', require('./routes/helpChat'));
 
 // ─── MongoDB Connection ───────────────────────────────────────────────────────
 const connectDB = async () => {

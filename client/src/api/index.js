@@ -19,5 +19,6 @@ export const calculateEmission = (data) => api.post('/emissions/calculate', data
 export const getSummary = () => api.get('/emissions/summary');
 export const getLogs = () => api.get('/emissions/logs');
 export const getRecommendations = () => api.get('/ai/recommendations');
+export const askHelpChat = (message, history) => api.post('/help-chat', { message, history });
 
 export default api;

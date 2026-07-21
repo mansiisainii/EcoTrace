@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LogOut, Menu, X } from 'lucide-react';
+import HelpChatWidget from './HelpChatWidget';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ThemeToggle from './ThemeToggle';
@@ -18,7 +19,8 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="border-b border-[var(--border)] bg-[var(--background)] sticky top-0 z-50">
+    <>
+      <nav className="border-b border-[var(--border)] bg-[var(--background)] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -117,6 +119,8 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    <HelpChatWidget />
+    </>
   );
 };
 

@@ -7,10 +7,10 @@ const EmissionTable = ({ logs }) => {
 
   const getScopeColor = (scope) => {
     const s = String(scope).toLowerCase();
-    if (s.includes('1')) return 'bg-red-100 text-red-800 border-red-200 dark:bg-red-900/40 dark:text-red-400 dark:border-red-900/50';
-    if (s.includes('2')) return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/40 dark:text-yellow-400 dark:border-yellow-900/50';
-    if (s.includes('3')) return 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/40 dark:text-blue-400 dark:border-blue-900/50';
-    return 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-900/40 dark:text-gray-400 dark:border-gray-900/50';
+    if (s.includes('1')) return 'bg-transparent text-red-600 border-red-200 dark:bg-red-900/40 dark:text-red-400 dark:border-red-900/50';
+    if (s.includes('2')) return 'bg-transparent text-amber-600 border-amber-200 dark:bg-yellow-900/40 dark:text-yellow-400 dark:border-yellow-900/50';
+    if (s.includes('3')) return 'bg-transparent text-blue-600 border-blue-200 dark:bg-blue-900/40 dark:text-blue-400 dark:border-blue-900/50';
+    return 'bg-transparent text-gray-600 border-gray-200 dark:bg-gray-900/40 dark:text-gray-400 dark:border-gray-900/50';
   };
 
   const getCategoryDot = (category) => {
@@ -65,7 +65,7 @@ const EmissionTable = ({ logs }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-[var(--text-muted)] uppercase">
                   {log.region || '-'}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-data-green text-right">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[var(--data-green)] text-right">
                   {log.co2e?.toLocaleString(undefined, { maximumFractionDigits: 1 })}
                 </td>
               </tr>
@@ -75,7 +75,7 @@ const EmissionTable = ({ logs }) => {
         <tfoot>
           <tr className="bg-gray-50 dark:bg-black/10 border-t border-[var(--border)]">
             <td colSpan="5" className="px-6 py-4 text-right font-bold text-[var(--text-primary)]">Total</td>
-            <td className="px-6 py-4 text-right font-bold text-data-green text-lg">
+            <td className="px-6 py-4 text-right font-bold text-[var(--data-green)] text-lg">
               {totalCO2e.toLocaleString(undefined, { maximumFractionDigits: 1 })}
             </td>
           </tr>
