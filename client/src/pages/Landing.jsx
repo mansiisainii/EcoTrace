@@ -31,8 +31,8 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-[var(--background)] fade-in">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#030712] to-[#0a1628] px-4 py-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[160px] pointer-events-none"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#030712] to-[#0a1628] px-4 py-20">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/[8%] rounded-full blur-[160px] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           
@@ -54,10 +54,10 @@ const Landing = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-              <Link to="/register" className="btn-primary w-full sm:w-auto text-center">
+              <Link to="/register" className="w-full sm:w-auto bg-green-600 text-white font-medium rounded-xl px-5 py-3 transition-all hover:bg-green-700 shadow-sm text-center">
                 Get Started Free
               </Link>
-              <button onClick={handleDemoLogin} className="btn-outline w-full sm:w-auto text-center">
+              <button onClick={handleDemoLogin} className="w-full sm:w-auto bg-transparent border border-[var(--border)] text-green-500 font-medium rounded-xl px-5 py-3 transition-colors hover:border-green-500/50 hover:bg-green-500/5 text-sm text-center">
                 View Live Demo
               </button>
             </div>
@@ -83,7 +83,7 @@ const Landing = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 px-4 bg-[var(--card)]">
+      <section className="py-24 px-4 bg-[#0a1628]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">How It Works</h2>
