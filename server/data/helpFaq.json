@@ -427,17 +427,7 @@
       "company name"
     ],
     "answer": "Go to Settings by clicking your username in the navbar, then click Edit Profile to update your name or company name, or to change your password."
-  },
-  {
-    "question": "how do I export data",
-    "keywords": [
-      "export",
-      "download",
-      "csv",
-      "pdf",
-      "save data"
-    ],
-    "answer": "EcoTrace doesn't have an export or download feature currently. You can view all your emission logs on the Reports page with filters by date, category, and scope."
+
   },
   {
     "question": "can I share with team",
@@ -471,5 +461,27 @@
       "phone"
     ],
     "answer": "EcoTrace doesn't have a dedicated mobile app currently. However the web app is fully responsive and works well on mobile browsers."
+  },
+  {
+    "question": "how do I export data",
+    "keywords": [
+      "export",
+      "download",
+      "csv",
+      "pdf",
+      "save data",
+      "spreadsheet"
+    ],
+    "answer": "Go to the Reports page — you will find an Export CSV button that downloads all your emission logs as a CSV file directly to your device."
+  },
+  {
+    "question": "how do I print or download PDF",
+    "keywords": [
+      "print",
+      "pdf",
+      "download pdf",
+      "print report"
+    ],
+    "answer": "On the Reports page there is a Print or PDF button that lets you print your emission report or save it as a PDF."
   }
 ]
