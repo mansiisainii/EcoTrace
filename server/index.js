@@ -21,6 +21,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/emissions', require('./routes/emissions'));
 app.use('/api/ai', require('./routes/ai'));
 app.use('/api/help-chat', require('./routes/helpChat'));
+app.use('/api/user', require('./routes/user'));
 
 // ─── MongoDB Connection ───────────────────────────────────────────────────────
 const connectDB = async () => {

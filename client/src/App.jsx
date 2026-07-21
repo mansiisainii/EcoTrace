@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Reports from './pages/Reports';
+import Settings from './pages/Settings';
 
 const ProtectedRoute = () => {
   const { user } = useAuth();
@@ -56,6 +57,7 @@ const App = () => {
             <Route element={<ProtectedRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/reports" element={<Reports />} />
+              <Route path="/settings" element={<Settings />} />
             </Route>
             
             <Route path="*" element={<Navigate to="/" replace />} />

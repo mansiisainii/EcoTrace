@@ -21,4 +21,9 @@ export const getLogs = () => api.get('/emissions/logs');
 export const getRecommendations = () => api.get('/ai/recommendations');
 export const askHelpChat = (message, history) => api.post('/help-chat', { message, history });
 
+export const getUserProfile = () => api.get('/user/profile');
+export const updateUserProfile = (data) => api.patch('/user/profile', data);
+export const updateUserEmail = (data) => api.patch('/user/email', data);
+export const updateUserPassword = (data) => api.patch('/user/password', data);
+
 export default api;

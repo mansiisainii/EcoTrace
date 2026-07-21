@@ -58,9 +58,12 @@ const Navbar = () => {
               
               <ThemeToggle />
               
-              <span className="text-sm font-medium text-[var(--text-primary)]">
+              <Link 
+                to="/settings"
+                className={`text-sm font-medium transition-all duration-200 relative ${isActive('/settings') ? 'text-green-500' : 'text-[var(--text-primary)] hover:text-green-500 hover:underline'}`}
+              >
                 {user?.companyName || user?.name || 'User'}
-              </span>
+              </Link>
               
               <button 
                 onClick={handleLogout}

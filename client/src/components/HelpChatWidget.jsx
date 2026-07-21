@@ -80,7 +80,7 @@ const HelpChatWidget = () => {
       </div>
 
       {isOpen && (
-        <div className={`fixed bottom-24 right-3 sm:right-6 z-50 ${isExpanded ? 'sm:w-[480px] sm:max-h-[600px]' : 'sm:w-96 sm:max-h-[500px]'} w-[calc(100vw-24px)] max-h-[60vh] transition-all duration-300 ease-in-out rounded-2xl shadow-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col overflow-hidden fade-in`}>
+        <div className={`fixed bottom-24 right-3 sm:right-6 z-50 ${isExpanded ? 'w-[calc(100vw-24px)] sm:w-[480px] h-[80vh] sm:h-[600px]' : 'w-[calc(100vw-24px)] sm:w-96 h-[60vh] sm:h-[500px]'} transition-all duration-300 ease-in-out rounded-2xl shadow-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col overflow-hidden fade-in`}>
           <div className="bg-green-600 p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center gap-2">
               <img src="/earth.svg" alt="EcoTrace" className="w-4 h-4" />
