@@ -1,192 +1,475 @@
 [
   {
     "question": "What is EcoTrace?",
-    "keywords": ["ecotrace", "what", "about", "app", "everything", "overview", "works", "used", "tell"],
+    "keywords": [
+      "ecotrace",
+      "what",
+      "about",
+      "app",
+      "everything",
+      "overview",
+      "works",
+      "used",
+      "tell"
+    ],
     "answer": "EcoTrace is an AI-powered carbon emission tracking platform for businesses. You log emissions by typing naturally in the AI chat — for example 'We used 2000 kWh electricity in Mumbai' — and the app calculates exact CO2e, categorizes it under Scope 1, 2, or 3, and shows everything on a real-time dashboard with charts. You also get AI-generated recommendations to reduce emissions, and a Reports page to filter and analyze all your logs."
   },
   {
     "question": "What is the Dashboard page?",
-    "keywords": ["dashboard", "page"],
+    "keywords": [
+      "dashboard",
+      "page"
+    ],
     "answer": "The Dashboard page gives you an overview of your carbon footprint. It features stat cards, charts, and personalized AI recommendations."
   },
   {
     "question": "What is the Reports page?",
-    "keywords": ["reports", "page"],
+    "keywords": [
+      "reports",
+      "page"
+    ],
     "answer": "The Reports page provides a detailed breakdown of all your logged emissions. You can filter by date, scope, and category to analyze your data."
   },
   {
     "question": "How do I navigate between Dashboard and Reports?",
-    "keywords": ["navigate", "between", "dashboard", "reports"],
+    "keywords": [
+      "navigate",
+      "between",
+      "dashboard",
+      "reports"
+    ],
     "answer": "You can use the navigation bar at the top or side of the screen to switch between the Dashboard and Reports pages. Simply click on the respective tabs."
   },
   {
     "question": "How do I logout?",
-    "keywords": ["how", "logout", "log", "out"],
+    "keywords": [
+      "how",
+      "logout",
+      "log",
+      "out"
+    ],
     "answer": "You can log out by clicking the Logout button located in the user profile menu or navigation bar."
   },
   {
     "question": "How do I switch between dark and light theme?",
-    "keywords": ["switch", "dark", "light", "theme", "toggle"],
+    "keywords": [
+      "switch",
+      "dark",
+      "light",
+      "theme",
+      "toggle"
+    ],
     "answer": "You can switch between dark and light modes by clicking the theme toggle icon in the navigation bar."
   },
   {
     "question": "How do I log an emission?",
-    "keywords": ["how", "log", "emission", "track"],
+    "keywords": [
+      "how",
+      "log",
+      "emission",
+      "track"
+    ],
     "answer": "To log an emission, use the AI Chat feature. Simply type what you did, like 'I drove 50 miles in a car', and the AI will calculate and log the emission for you."
   },
   {
     "question": "What kind of messages can I type in the AI chat?",
-    "keywords": ["what", "messages", "type", "ai", "chat"],
+    "keywords": [
+      "what",
+      "messages",
+      "type",
+      "ai",
+      "chat"
+    ],
     "answer": "You can type natural language descriptions of your activities. For example, 'I used 100 kWh of electricity' or 'I flew from NY to London'."
   },
   {
     "question": "Give me examples of what to type in the chat",
-    "keywords": ["examples", "what", "type", "chat"],
+    "keywords": [
+      "examples",
+      "what",
+      "type",
+      "chat"
+    ],
     "answer": "You can say: 'I spent $50 on a train ticket', 'Our office consumed 500 kWh of electricity last month', or 'I shipped a 10kg package across the country'."
   },
   {
     "question": "What happens after I send a message in the chat?",
-    "keywords": ["what", "happens", "after", "send", "message", "chat"],
+    "keywords": [
+      "what",
+      "happens",
+      "after",
+      "send",
+      "message",
+      "chat"
+    ],
     "answer": "The AI analyzes your message, extracts the relevant details like distance or energy, calculates the CO2e, and logs it to your account."
   },
   {
     "question": "Why did the AI ask me a question instead of logging?",
-    "keywords": ["why", "ai", "ask", "question", "instead", "logging"],
+    "keywords": [
+      "why",
+      "ai",
+      "ask",
+      "question",
+      "instead",
+      "logging"
+    ],
     "answer": "If your message is missing details (like distance or fuel type), the AI will ask a follow-up question to ensure accurate calculation before logging."
   },
   {
     "question": "What are the suggested prompt chips at the bottom of the chat?",
-    "keywords": ["what", "suggested", "prompt", "chips", "bottom", "chat"],
+    "keywords": [
+      "what",
+      "suggested",
+      "prompt",
+      "chips",
+      "bottom",
+      "chat"
+    ],
     "answer": "The suggested prompt chips are quick templates you can click to easily log common emissions without typing the whole sentence."
   },
   {
     "question": "What is Scope 1?",
-    "keywords": ["what", "scope", "1", "one"],
+    "keywords": [
+      "what",
+      "scope",
+      "1",
+      "one"
+    ],
     "answer": "Scope 1 covers direct emissions from owned or controlled sources. This includes company vehicles and fuel combustion on site."
   },
   {
     "question": "What is Scope 2?",
-    "keywords": ["what", "scope", "2", "two"],
+    "keywords": [
+      "what",
+      "scope",
+      "2",
+      "two"
+    ],
     "answer": "Scope 2 covers indirect emissions from the generation of purchased electricity, steam, heating, and cooling consumed by the reporting company."
   },
   {
     "question": "What is Scope 3?",
-    "keywords": ["what", "scope", "3", "three"],
+    "keywords": [
+      "what",
+      "scope",
+      "3",
+      "three"
+    ],
     "answer": "Scope 3 includes all other indirect emissions that occur in a company's value chain. Examples are business travel, purchased goods, and waste disposal."
   },
   {
     "question": "What is the difference between Scope 1, 2 and 3?",
-    "keywords": ["difference", "between", "scope", "1", "2", "3"],
+    "keywords": [
+      "difference",
+      "between",
+      "scope",
+      "1",
+      "2",
+      "3"
+    ],
     "answer": "Scope 1 is direct emissions, Scope 2 is indirect energy emissions, and Scope 3 is all other indirect value-chain emissions."
   },
   {
     "question": "What categories of emissions can I track?",
-    "keywords": ["what", "categories", "emissions", "track"],
+    "keywords": [
+      "what",
+      "categories",
+      "emissions",
+      "track"
+    ],
     "answer": "You can track various categories including electricity, fuel combustion, travel (flights, driving), shipping, and other business activities."
   },
   {
     "question": "What is electricity emission?",
-    "keywords": ["what", "electricity", "emission"],
+    "keywords": [
+      "what",
+      "electricity",
+      "emission"
+    ],
     "answer": "Electricity emissions are generated from the power you consume from the grid. This falls under Scope 2 emissions."
   },
   {
     "question": "What is travel emission?",
-    "keywords": ["what", "travel", "emission"],
+    "keywords": [
+      "what",
+      "travel",
+      "emission"
+    ],
     "answer": "Travel emissions come from business-related transportation like flights, train rides, and driving. They are typically categorized under Scope 3."
   },
   {
     "question": "What is shipping emission?",
-    "keywords": ["what", "shipping", "emission"],
+    "keywords": [
+      "what",
+      "shipping",
+      "emission"
+    ],
     "answer": "Shipping emissions result from transporting goods and packages. This includes freight and courier services."
   },
   {
     "question": "What is fuel emission?",
-    "keywords": ["what", "fuel", "emission"],
+    "keywords": [
+      "what",
+      "fuel",
+      "emission"
+    ],
     "answer": "Fuel emissions come from the direct combustion of fuels like gasoline, diesel, or natural gas on-site or in company vehicles."
   },
   {
     "question": "What unit is CO2e measured in?",
-    "keywords": ["what", "unit", "co2e", "measured"],
+    "keywords": [
+      "what",
+      "unit",
+      "co2e",
+      "measured"
+    ],
     "answer": "CO2e is typically measured in kilograms (kg) or metric tons (t). EcoTrace primarily displays emissions in kilograms of CO2e."
   },
   {
     "question": "What does CO2e mean?",
-    "keywords": ["what", "does", "co2e", "mean"],
+    "keywords": [
+      "what",
+      "does",
+      "co2e",
+      "mean"
+    ],
     "answer": "CO2e stands for Carbon Dioxide Equivalent. It's a standard unit used to measure the global warming potential of various greenhouse gases compared to carbon dioxide."
   },
   {
     "question": "What do the 4 stat cards show?",
-    "keywords": ["what", "4", "four", "stat", "cards", "show"],
+    "keywords": [
+      "what",
+      "4",
+      "four",
+      "stat",
+      "cards",
+      "show"
+    ],
     "answer": "The stat cards show your total emissions, average emission per entry, total logged activities, and your highest emission category."
   },
   {
     "question": "What does the bar chart show?",
-    "keywords": ["what", "bar", "chart", "show"],
+    "keywords": [
+      "what",
+      "bar",
+      "chart",
+      "show"
+    ],
     "answer": "The bar chart provides a visual breakdown of your emissions grouped by their specific categories or scopes."
   },
   {
     "question": "What does the pie chart show?",
-    "keywords": ["what", "pie", "chart", "show"],
+    "keywords": [
+      "what",
+      "pie",
+      "chart",
+      "show"
+    ],
     "answer": "The pie chart displays the percentage distribution of your emissions across different scopes (Scope 1, 2, and 3)."
   },
   {
     "question": "What does the line chart show?",
-    "keywords": ["what", "line", "chart", "show"],
+    "keywords": [
+      "what",
+      "line",
+      "chart",
+      "show"
+    ],
     "answer": "The line chart tracks your emissions over time, allowing you to see trends and compare different periods."
   },
   {
     "question": "How do I see my Scope 1/2/3 totals?",
-    "keywords": ["how", "see", "scope", "1", "2", "3", "totals"],
+    "keywords": [
+      "how",
+      "see",
+      "scope",
+      "1",
+      "2",
+      "3",
+      "totals"
+    ],
     "answer": "You can view your Scope 1, 2, and 3 totals on the Dashboard via the pie chart and the detailed breakdown cards."
   },
   {
     "question": "What are AI Recommendations?",
-    "keywords": ["what", "ai", "recommendations"],
+    "keywords": [
+      "what",
+      "ai",
+      "recommendations"
+    ],
     "answer": "AI Recommendations provide personalized, actionable advice on how to reduce your carbon footprint based on your logged emission data."
   },
   {
     "question": "How are recommendations generated?",
-    "keywords": ["how", "recommendations", "generated"],
+    "keywords": [
+      "how",
+      "recommendations",
+      "generated"
+    ],
     "answer": "Recommendations are generated by our AI analyzing your specific emission trends and identifying areas where you can improve efficiency."
   },
   {
     "question": "How do I filter emissions by category?",
-    "keywords": ["how", "filter", "emissions", "category"],
+    "keywords": [
+      "how",
+      "filter",
+      "emissions",
+      "category"
+    ],
     "answer": "On the Reports page, use the Category dropdown menu to select a specific type of emission you want to view."
   },
   {
     "question": "How do I filter by date range?",
-    "keywords": ["how", "filter", "date", "range"],
+    "keywords": [
+      "how",
+      "filter",
+      "date",
+      "range"
+    ],
     "answer": "Use the date picker on the Reports page to select a start and end date to filter your emission records."
   },
   {
     "question": "How do I filter by scope?",
-    "keywords": ["how", "filter", "scope"],
+    "keywords": [
+      "how",
+      "filter",
+      "scope"
+    ],
     "answer": "On the Reports page, use the Scope dropdown menu to filter records to show only Scope 1, 2, or 3 emissions."
   },
   {
     "question": "What does the Total CO2e card show in Reports?",
-    "keywords": ["what", "total", "co2e", "card", "show", "reports"],
+    "keywords": [
+      "what",
+      "total",
+      "co2e",
+      "card",
+      "show",
+      "reports"
+    ],
     "answer": "The Total CO2e card on the Reports page shows the sum of all emissions that match your current filter selections."
   },
   {
     "question": "What does the Top Category card show?",
-    "keywords": ["what", "top", "category", "card", "show"],
+    "keywords": [
+      "what",
+      "top",
+      "category",
+      "card",
+      "show"
+    ],
     "answer": "The Top Category card highlights the emission category that contributed the most to your footprint within the selected filters."
   },
   {
     "question": "What is the demo account?",
-    "keywords": ["what", "demo", "account"],
+    "keywords": [
+      "what",
+      "demo",
+      "account"
+    ],
     "answer": "The demo account allows you to explore EcoTrace's features with pre-populated dummy data without needing to sign up."
   },
   {
     "question": "How do I use the demo account?",
-    "keywords": ["how", "use", "demo", "account"],
+    "keywords": [
+      "how",
+      "use",
+      "demo",
+      "account"
+    ],
     "answer": "You can access the demo account by clicking the 'Try Demo' or 'Login as Demo User' button on the login page."
   },
   {
     "question": "What credentials are for the demo?",
-    "keywords": ["what", "credentials", "demo"],
+    "keywords": [
+      "what",
+      "credentials",
+      "demo"
+    ],
     "answer": "You don't need manual credentials; just use the provided demo login button on the authentication page."
+  },
+  {
+    "question": "how do I change my password",
+    "keywords": [
+      "password",
+      "change password",
+      "update password",
+      "reset password"
+    ],
+    "answer": "You can change your password from the Settings page — click your username in the navbar, select Edit Profile, and use the Change Password section. You'll need to enter your current password to confirm the change."
+  },
+  {
+    "question": "is there a settings page",
+    "keywords": [
+      "settings",
+      "preferences",
+      "account settings",
+      "profile"
+    ],
+    "answer": "Yes! Click your username in the navbar to open your Settings page, where you can view your profile, edit your name and company name, and change your password. You can also toggle between dark and light theme using the moon/sun icon in the navbar."
+  },
+  {
+    "question": "can I change my email",
+    "keywords": [
+      "email",
+      "change email",
+      "update email"
+    ],
+    "answer": "Email addresses can't be changed from the Settings page currently — your email stays fixed to your account."
+  },
+  {
+    "question": "how do I edit my profile",
+    "keywords": [
+      "edit profile",
+      "update profile",
+      "change name",
+      "company name"
+    ],
+    "answer": "Go to Settings by clicking your username in the navbar, then click Edit Profile to update your name or company name, or to change your password."
+  },
+  {
+    "question": "how do I export data",
+    "keywords": [
+      "export",
+      "download",
+      "csv",
+      "pdf",
+      "save data"
+    ],
+    "answer": "EcoTrace doesn't have an export or download feature currently. You can view all your emission logs on the Reports page with filters by date, category, and scope."
+  },
+  {
+    "question": "can I share with team",
+    "keywords": [
+      "share",
+      "team",
+      "collaborate",
+      "members",
+      "invite"
+    ],
+    "answer": "EcoTrace doesn't support team collaboration or multi-user features currently. It's designed for single-user company tracking."
+  },
+  {
+    "question": "can I edit a log",
+    "keywords": [
+      "edit",
+      "update",
+      "modify",
+      "delete",
+      "remove log"
+    ],
+    "answer": "EcoTrace doesn't have edit or delete functionality for logs currently. You can view all your logs on the Reports page."
+  },
+  {
+    "question": "is there a mobile app",
+    "keywords": [
+      "mobile",
+      "app",
+      "android",
+      "ios",
+      "phone"
+    ],
+    "answer": "EcoTrace doesn't have a dedicated mobile app currently. However the web app is fully responsive and works well on mobile browsers."
   }
 ]
