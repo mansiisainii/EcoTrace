@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
 const Register = () => {
-  const [formData, setFormData] = useState({ name: '', companyName: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', company: '', email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -80,8 +80,8 @@ const Register = () => {
                 required
                 className="input-field" 
                 placeholder="Acme Corp"
-                value={formData.companyName}
-                onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+                value={formData.company}
+                onChange={(e) => setFormData({...formData, company: e.target.value})}
               />
             </div>
 
