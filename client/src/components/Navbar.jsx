@@ -110,7 +110,7 @@ const Navbar = () => {
             </Link>
             <div className="border-t border-[var(--border)] my-2"></div>
             <div className="px-3 py-2 text-sm text-[var(--text-muted)]">
-              Signed in as <span className="font-semibold text-[var(--text-primary)]">{user?.companyName || user?.name || 'User'}</span>
+              Signed in as <Link to="/settings" onClick={() => setMobileMenuOpen(false)} className="font-semibold text-[var(--text-primary)] hover:text-green-500 hover:underline transition-colors">{user?.companyName || user?.name || 'User'}</Link>
             </div>
             <button 
               onClick={() => { setMobileMenuOpen(false); handleLogout(); }}

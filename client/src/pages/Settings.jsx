@@ -55,8 +55,8 @@ const Settings = () => {
       if (!pwdData.currentPassword || !pwdData.newPassword || !pwdData.confirmPassword) {
         return toast.error('All password fields are required to change password');
       }
-      if (pwdData.newPassword.length < 6) {
-        return toast.error('New password must be at least 6 characters');
+      if (pwdData.newPassword.length < 8) {
+        return toast.error('New password must be at least 8 characters');
       }
       if (pwdData.newPassword !== pwdData.confirmPassword) {
         return toast.error('New passwords do not match');

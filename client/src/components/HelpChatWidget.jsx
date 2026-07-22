@@ -61,14 +61,14 @@ const HelpChatWidget = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 right-3 sm:right-6 z-50 flex items-center justify-center group">
+      <div className="fixed bottom-6 left-3 right-auto sm:left-auto sm:right-6 z-50 flex items-center justify-center group">
         {!isOpen && (
           <span className="animate-ping [animation-duration:3s] absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-20"></span>
         )}
         
-        <div className="absolute right-full mr-4 px-3 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+        <div className="absolute left-full sm:left-auto sm:right-full ml-4 sm:ml-0 sm:mr-4 px-3 py-1.5 bg-gray-900 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
           Help Assistant
-          <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+          <div className="absolute top-1/2 -left-1 sm:-left-auto sm:-right-1 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
         </div>
 
         <button
@@ -80,7 +80,7 @@ const HelpChatWidget = () => {
       </div>
 
       {isOpen && (
-        <div className={`fixed bottom-24 right-3 sm:right-6 z-50 ${isExpanded ? 'w-[calc(100vw-24px)] sm:w-[480px] h-[80vh] sm:h-[600px]' : 'w-[calc(100vw-24px)] sm:w-96 h-[60vh] sm:h-[500px]'} transition-all duration-300 ease-in-out rounded-2xl shadow-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col overflow-hidden fade-in`}>
+        <div className={`fixed bottom-24 left-3 right-auto sm:left-auto sm:right-6 z-50 ${isExpanded ? 'w-[calc(100vw-24px)] sm:w-[480px] h-[80vh] sm:h-[600px]' : 'w-[calc(100vw-24px)] sm:w-96 h-[60vh] sm:h-[500px]'} transition-all duration-300 ease-in-out rounded-2xl shadow-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col overflow-hidden fade-in`}>
           <div className="bg-green-600 p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center gap-2">
               <img src="/earth.svg" alt="EcoTrace" className="w-4 h-4" />

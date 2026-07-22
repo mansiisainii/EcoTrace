@@ -27,6 +27,18 @@ exports.register = async (req, res) => {
       });
     }
 
+    const isValidPassword = (pwd) => {
+      return pwd.length >= 8 &&
+             /[a-z]/.test(pwd);
+    };
+
+    if (!isValidPassword(password)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password must be at least 8 characters long and include a lowercase letter.',
+      });
+    }
+
     const existingUser = await User.findOne({ email: email.toLowerCase() });
     if (existingUser) {
       return res.status(409).json({

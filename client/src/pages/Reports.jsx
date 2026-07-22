@@ -181,12 +181,12 @@ const Reports = () => {
             <h1 className="text-3xl font-bold text-[var(--text-primary)]">Emissions Report</h1>
             <p className="text-[var(--text-muted)] mt-1">Detailed analysis and logs of your carbon footprint</p>
           </div>
-          <div className="flex items-center gap-3">
-            <button onClick={exportCSV} className="flex items-center gap-2 px-4 py-2 rounded-lg border border-green-500 text-green-500 hover:bg-green-500/10 transition-colors text-sm font-semibold">
+          <div className="flex items-center gap-3 w-full md:w-auto">
+            <button onClick={exportCSV} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-green-500 text-green-500 hover:bg-green-500/10 transition-colors text-sm font-semibold">
               <Download className="w-4 h-4" />
               Export CSV
             </button>
-            <button onClick={() => window.print()} className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-[var(--background)] hover:bg-green-600 transition-colors text-sm font-semibold">
+            <button onClick={() => window.print()} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-[var(--background)] hover:bg-green-600 transition-colors text-sm font-semibold">
               <Printer className="w-4 h-4" />
               Print / PDF
             </button>
@@ -248,15 +248,15 @@ const Reports = () => {
 
           {/* Filters & Sort */}
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto overflow-x-auto">
-            <div className="flex items-center gap-2 text-[var(--text-muted)] text-sm whitespace-nowrap">
+            <div className="flex items-center gap-2 text-[var(--text-muted)] text-sm whitespace-nowrap mb-2 sm:mb-0">
               <Filter className="w-4 h-4" />
               <span>Filter & Sort:</span>
             </div>
-            <div className="flex gap-3 flex-wrap sm:flex-nowrap">
+            <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-nowrap w-full sm:w-auto">
               <select
                 value={dateFilter}
                 onChange={e => setDateFilter(e.target.value)}
-                className="input-field w-auto cursor-pointer min-w-[120px]"
+                className="input-field w-full sm:w-auto cursor-pointer min-w-[120px]"
               >
                 <option value="all">All Time</option>
                 <option value="month">This Month</option>
@@ -267,7 +267,7 @@ const Reports = () => {
               <select
                 value={categoryFilter}
                 onChange={e => setCategoryFilter(e.target.value)}
-                className="input-field w-auto cursor-pointer min-w-[120px]"
+                className="input-field w-full sm:w-auto cursor-pointer min-w-[120px]"
               >
                 <option value="all">All Categories</option>
                 <option value="electricity">Electricity</option>
@@ -279,7 +279,7 @@ const Reports = () => {
               <select
                 value={scopeFilter}
                 onChange={e => setScopeFilter(e.target.value)}
-                className="input-field w-auto cursor-pointer min-w-[120px]"
+                className="input-field w-full sm:w-auto cursor-pointer min-w-[120px]"
               >
                 <option value="all">All Scopes</option>
                 <option value="Scope 1">Scope 1</option>
@@ -290,7 +290,7 @@ const Reports = () => {
               <select
                 value={sortOrder}
                 onChange={e => setSortOrder(e.target.value)}
-                className="input-field w-auto cursor-pointer min-w-[120px]"
+                className="input-field w-full sm:w-auto cursor-pointer min-w-[120px]"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>

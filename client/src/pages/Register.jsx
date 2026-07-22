@@ -12,8 +12,23 @@ const Register = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  const [displayedError, setDisplayedError] = useState('');
+
+  const getPasswordError = (pwd) => {
+    if (!pwd) return '';
+    if (pwd.length < 8) return 'Password must be at least 8 characters';
+    if (!/[a-z]/.test(pwd)) return 'Password must contain at least 1 lowercase letter';
+    return '';
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const error = getPasswordError(formData.password);
+    if (error) {
+      setDisplayedError(error);
+      return;
+    }
+    setDisplayedError('');
     setLoading(true);
     try {
       const { data } = await registerUser(formData);
@@ -101,6 +116,11 @@ const Register = () => {
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
+              {displayedError && (
+                <div className="mt-2 text-red-500">
+                  {displayedError}
+                </div>
+              )}
             </div>
 
             <button 
